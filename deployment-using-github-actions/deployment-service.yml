@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: swiggy
-        image: aakibkhan1212/swiggy-clone:latest
+        image: 355628581932.dkr.ecr.us-east-1.amazonaws.com/swiggy-repo:latest
         ports:
         - containerPort: 3000   # Use port 3000
 
