@@ -45,9 +45,9 @@ jobs:
           # Push the image to ECR
           docker push 355628581932.dkr.ecr.us-east-1.amazonaws.com/swiggy-repo:latest
       - name: Update kubeconfig
-        run: aws eks --region ap-south-1 update-kubeconfig --name EKS_CLOUD
+        run: aws eks --region us-east-1 update-kubeconfig --name EKS_CLOUD
       - name: Deploy to kubernetes
-        run: kubectl apply -f deployment-service.yml
+        run: kubectl apply -f deployment-using-github-actions/deployment-service.yml
           
     
      
