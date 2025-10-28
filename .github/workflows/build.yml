@@ -37,7 +37,7 @@ jobs:
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 355628581932.dkr.ecr.us-east-1.amazonaws.com
 
           # Build Docker image
-          docker build -t swiggy-repo .
+          docker build -t swiggy-repo -f deployment-using-github-actions/Dockerfile deployment-using-github-actions/
 
           # Tag the image for ECR
           docker tag swiggy-repo:latest 355628581932.dkr.ecr.us-east-1.amazonaws.com/swiggy-repo:latest
