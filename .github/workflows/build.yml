@@ -44,10 +44,11 @@ jobs:
 
           # Push the image to ECR
           docker push 355628581932.dkr.ecr.us-east-1.amazonaws.com/swiggy-repo:latest
+      - name: ECR PULL
+        run: |
+          aws eks update-kubeconfig --region us-east-1 --name EKS_CLOUD
+          kubectl apply -f deployment-using-github-actions/deployment-service.yml
+          kubectl rollout status deployment/swiggy
+          
     
-      # If you wish to fail your job when the Quality Gate is red, uncomment the
-      # following lines. This would typically be used to fail a deployment.
-      # - uses: sonarsource/sonarqube-quality-gate-action@master
-      #   timeout-minutes: 5
-      #   env:
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+     
