@@ -44,8 +44,7 @@ jobs:
 
           # Push the image to ECR
           docker push 355628581932.dkr.ecr.us-east-1.amazonaws.com/swiggy-repo:latest
-    env:
-      DOCKER_CLI_ACI: 1
+    
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
       # - uses: sonarsource/sonarqube-quality-gate-action@master
